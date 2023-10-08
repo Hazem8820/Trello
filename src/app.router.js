@@ -13,23 +13,23 @@ import connectDB from "../DB/connection.js"
 import cors from "cors"
 const appRouter = (express, app) => {
     // CORS
-    const whitelist = ["https://e-commerce-opal-seven.vercel.app"]
-    app.use((req, res, next) => {
-        if (req.originalUrl.includes("/auth/confirmemail")) {
-            res.setHeader("Access_Control_Allow_Origin", "*")
-            res.setHeader("Access_Control_Allow_Methods", "GET")
-            return next()
-        }
-        if (!whitelist.includes(req.header('origin'))) {
-            return next(new Error('Blocked By CORS'))
-        }
-        res.setHeader("Access_Control_Allow_Origin", "*")  // Domain
-        res.setHeader("Access_Control_Allow_Headers", "*") // DEFAULT VALUES
-        res.setHeader("Access_Control_Allow_Methods", "*") // GET POST PATCH PUT DELETE
-        res.setHeader("Access_Control_Allow_Private_Network", true) // local or live
-        return next()
-    })
-    // app.use(cors())
+    // const whitelist = ["https://e-commerce-opal-seven.vercel.app"]
+    // app.use((req, res, next) => {
+    //     if (req.originalUrl.includes("/auth/confirmemail")) {
+    //         res.setHeader("Access_Control_Allow_Origin", "*")
+    //         res.setHeader("Access_Control_Allow_Methods", "GET")
+    //         return next()
+    //     }
+    //     if (!whitelist.includes(req.header('origin'))) {
+    //         return next(new Error('Blocked By CORS'))
+    //     }
+    //     res.setHeader("Access_Control_Allow_Origin", "*")  // Domain
+    //     res.setHeader("Access_Control_Allow_Headers", "*") // DEFAULT VALUES
+    //     res.setHeader("Access_Control_Allow_Methods", "*") // GET POST PATCH PUT DELETE
+    //     res.setHeader("Access_Control_Allow_Private_Network", true) // local or live
+    //     return next()
+    // })
+    app.use(cors())
     connectDB()
     app.use(express.json())
     app.use('/auth', authRouter)
