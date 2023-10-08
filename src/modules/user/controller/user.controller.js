@@ -7,7 +7,7 @@ import bcrypt from 'bcryptjs';
 
 //////////////////////////////////////////////////////////////////// Get User /////////////////////////////////////////////////////////////////////////////////////
 export const getUser = asyncHandler(async (req, res, next) => {
-    const user = await userModel.findById(req.user._id) 
+    const user = await userModel.findById(req.query.id) 
     const qrcode = await requestQr({ user: { firstName: user.firstName, lastName: user.lastName, email: user.email } }) // generate QRCode
     return user ? res.status(200).json({ success: true, user: req.user, qrcode }) : next(new Error("In-Valid User Id"))
 })
