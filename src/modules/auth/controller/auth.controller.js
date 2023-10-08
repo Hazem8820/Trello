@@ -18,7 +18,7 @@ export const Signup = asyncHandler(async (req, res, next) => {
     const user = await userModel.create({ firstName, lastName, userName, email, password: hashedPassword, phone, age, gender }) //create user
     const token = generateToken({ id: user._id }, process.env.EMAIL_SIGNATURE, 60 * 5) //generate confirmation tokens
     const newToken = generateToken({ id: user._id }, process.env.EMAIL_SIGNATURE, 60 * 60 * 24 * 30)
-    const html = confirmStamp(`${req.protocol}://${req.headers.host}/auth/confirmemail/${token}`, `${req.protocol}://${req.headers.host}/auth/newconfirmemail/${newToken}`)
+    const html = confirmStamp(`${req.protocol}://e-commerce-opal-seven.vercel.app/auth/confirmemail/${token}`, `${req.protocol}://e-commerce-opal-seven.vercel.app/auth/newconfirmemail/${newToken}`)
     await sendEmail({ to: email, subject: "Account Activation", html: html }) // send email
     return res.status(201).json({ success: true, message: "check your mail inbox" }) // response
 })
@@ -36,7 +36,7 @@ export const newConfirmRequest = asyncHandler(async (req, res, next) => {
     if (!user) return next(new Error("Account Not Found", { cause: 404 })) // check user
     if (user.isConfirmed) return res.status(201).json({ success: true, result: "you have activate your account successfully", message: `you can login now sir ${user.firstName}` }) // check Confirmation
     const token = generateToken({ id: user._id }, process.env.EMAIL_SIGNATURE, 60 * 2)
-    const html = requestNewStamp(`${req.protocol}://${req.headers.host}/auth/confirmemail/${token}`) // generate token
+    const html = requestNewStamp(`${req.protocol}://e-commerce-opal-seven.vercel.app/auth/confirmemail/${token}`) // generate token
     await sendEmail({ to: user.email, subject: "Account Activation", html }) // send new mail
     return res.status(201).json({ success: true, message: "check your mail inbox again" })
 })
