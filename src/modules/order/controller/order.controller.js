@@ -1,4 +1,4 @@
-import { asyncHandler } from "../../../utils/globalerrorhandling.js";
+import { asyncHandler } from "../../../utils/globalErrorHandling.js";
 import couponModel from './../../../../DB/models/coupon.model.js';
 import cartModel from './../../../../DB/models/cart.model.js';
 import productModel from './../../../../DB/models/product.model.js';
