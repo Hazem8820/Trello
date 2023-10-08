@@ -1,0 +1,1735 @@
+{
+	"info": {
+		"_postman_id": "3468a386-7c39-4506-a43f-bfa2f462e578",
+		"name": "E-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27793521"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"hazem\",\r\n    \"lastName\": \"galal\",\r\n    \"userName\": \"ReliC\",\r\n    \"email\": \"hazemgalal912@gmail.com\",\r\n    \"password\": \"Hazem@010188\",\r\n    \"confirmPassword\": \"Hazem@010188\",\r\n    \"phone\": \"01159364517\",\r\n    \"age\": 23,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hazemgalal912@gmail.com\",\r\n    \"password\": \"IG@750075\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset  Password Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hazemgalal912@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/resetpasswordemail",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"resetpasswordemail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rest Password Code",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"57956\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/resetpasswordcode",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"resetpasswordcode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/getuser?id=6521da642e19ca60111ffb65",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"getuser"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6521da642e19ca60111ffb65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjBkYjQ3MzVmMzIxYTZmMGQ0MjMxOCIsImlhdCI6MTY5MzU5MDY1NywiZXhwIjoxNjkzNjc3MDU3fQ.eJRm2pR8K4Jtj4WjGqXB6QjYvYKx_MOYPZ3Gx9BP9D0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"hazem\",\r\n    \"lastName\": \"galal\",\r\n    \"userName\": \"ReliC\",\r\n    \"email\": \"hazemgalal912@gmail.com\",\r\n    \"phone\": \"01159364517\",\r\n    \"age\": 23\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjBkYjQ3MzVmMzIxYTZmMGQ0MjMxOCIsImlhdCI6MTY5MzU5MDY1NywiZXhwIjoxNjkzNjc3MDU3fQ.eJRm2pR8K4Jtj4WjGqXB6QjYvYKx_MOYPZ3Gx9BP9D0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/delete?id=64f2359feae6241daf0b493d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64f2359feae6241daf0b493d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjBkYjQ3MzVmMzIxYTZmMGQ0MjMxOCIsImlhdCI6MTY5MzU5MDY1NywiZXhwIjoxNjkzNjc3MDU3fQ.eJRm2pR8K4Jtj4WjGqXB6QjYvYKx_MOYPZ3Gx9BP9D0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/softdelete?id=64f23659eae6241daf0b493e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"softdelete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64f23659eae6241daf0b493e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Picture",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cover Pictures",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjBkYjQ3MzVmMzIxYTZmMGQ0MjMxOCIsImlhdCI6MTY5MzY4MDIwMSwiZXhwIjoxNjkzNzY2NjAxfQ.fU8dcyI7mYZUM1xlE9958hVZwDsnu315wKeHlhN-EYE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/AZIF3385.JPG",
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/image.JPG"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/user/cover",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"cover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjBkYjQ3MzVmMzIxYTZmMGQ0MjMxOCIsImlhdCI6MTY5MzU5NzQ0MywiZXhwIjoxNjkzNjgzODQzfQ.5ZaM9yfkZoQBiRJYzrvJN5In1gai9syzl2BdZiff6kw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"NI@673581\",\r\n    \"newPassword\": \"hazoma@0101\",\r\n    \"confirmNewPassword\": \"hazoma@0101\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user/changePass",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"changePass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjBkYjQ3MzVmMzIxYTZmMGQ0MjMxOCIsImlhdCI6MTY5MzU5NzQ0MywiZXhwIjoxNjkzNjgzODQzfQ.5ZaM9yfkZoQBiRJYzrvJN5In1gai9syzl2BdZiff6kw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cover Pictures",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/user/deletecover",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"deletecover"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NDc2Mzc2MCwiZXhwIjoxNjk0ODUwMTYwfQ.3ArpIa6kgY8JX5Ecj7-yz-H9--1JonhUnkCnolh2aY4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "electronics",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/weather-icon-png-2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/category/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5MzgzODc5MiwiZXhwIjoxNjkzOTI1MTkyfQ.0moYo9nusb2w_N31_Osxou6v5G2BUu2YxZ7RTys0L6s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/Netflix-N-Symbol-logo-red-transparent-RGB-png.png"
+								},
+								{
+									"key": "name",
+									"value": "house",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/category/update?id=64f5f1529fa89ba6ee889319",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64f5f1529fa89ba6ee889319"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5MzgzODc5MiwiZXhwIjoxNjkzOTI1MTkyfQ.0moYo9nusb2w_N31_Osxou6v5G2BUu2YxZ7RTys0L6s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/category/delete?id=64f633b3287c8f9408c698ba",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64f633b3287c8f9408c698ba"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/category/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/category/get/64f60699e6b7968a13849a38",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"get",
+								"64f60699e6b7968a13849a38"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sub-category",
+			"item": [
+				{
+					"name": "Create SubCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NDc2Mzc2MCwiZXhwIjoxNjk0ODUwMTYwfQ.3ArpIa6kgY8JX5Ecj7-yz-H9--1JonhUnkCnolh2aY4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/Trello-Logo-2011.png"
+								},
+								{
+									"key": "name",
+									"value": "phone",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/category/65040c6ea6c8be93557e56e3/subcategory/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"65040c6ea6c8be93557e56e3",
+								"subcategory",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update SubCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5MzgzODc5MiwiZXhwIjoxNjkzOTI1MTkyfQ.0moYo9nusb2w_N31_Osxou6v5G2BUu2YxZ7RTys0L6s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/Bolio-Bero-150x150.png"
+								},
+								{
+									"key": "name",
+									"value": "Laptop",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/category/64f60699e6b7968a13849a38/subcategory/update/64f619adbf95d080b8dd02f0",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"64f60699e6b7968a13849a38",
+								"subcategory",
+								"update",
+								"64f619adbf95d080b8dd02f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SubCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5MzgzODc5MiwiZXhwIjoxNjkzOTI1MTkyfQ.0moYo9nusb2w_N31_Osxou6v5G2BUu2YxZ7RTys0L6s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/subcategory/delete/64f6282a26d7ac7b457054ef",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"subcategory",
+								"delete",
+								"64f6282a26d7ac7b457054ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all SubCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/subcategory/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"subcategory",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SubCategory By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/subcategory/get/64f628a263b9c8e01327572c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"subcategory",
+								"get",
+								"64f628a263b9c8e01327572c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "brands",
+			"item": [
+				{
+					"name": "Create Brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NDc2Mzc2MCwiZXhwIjoxNjk0ODUwMTYwfQ.3ArpIa6kgY8JX5Ecj7-yz-H9--1JonhUnkCnolh2aY4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Iphone",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/846103.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/brands/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"brands",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Brand",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NDEzMDMzNiwiZXhwIjoxNjk0MjE2NzM2fQ.M6C8dKT6WTJ2PzUl6GpEw58H8sh4WRvrr_AGmOh56pY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "soundcore",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/weather-icon-png-2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/brands/update?id=64fa60f017e65a9a10e98a24",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"brands",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64fa60f017e65a9a10e98a24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Brand",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NDEzMDMzNiwiZXhwIjoxNjk0MjE2NzM2fQ.M6C8dKT6WTJ2PzUl6GpEw58H8sh4WRvrr_AGmOh56pY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/brands/delete?id=64fa60f017e65a9a10e98a24",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"brands",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64fa60f017e65a9a10e98a24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/brands/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"brands",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brand By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/brands/get/64fa60f017e65a9a10e98a24",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"brands",
+								"get",
+								"64fa60f017e65a9a10e98a24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjU1NDgyMCwiZXhwIjoxNjk2NjQxMjIwfQ.zRhZ6P4iHtr-o09Yo0oFIQ2tkhHpKyZexxbh9JdhBKg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Iphone 13",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a new brand phone is here to buy there alot of a new features on it like his cam and his software it's totally new come and give us hit and try it now !",
+									"type": "text"
+								},
+								{
+									"key": "availableItems",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "soldItems",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "25000",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "65040c6ea6c8be93557e56e3",
+									"type": "text"
+								},
+								{
+									"key": "subCategoryId",
+									"value": "65040caea6c8be93557e56f0",
+									"type": "text"
+								},
+								{
+									"key": "brandId",
+									"value": "65040d04a6c8be93557e56fa",
+									"type": "text"
+								},
+								{
+									"key": "Images",
+									"type": "file",
+									"src": [
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/AZIF3385.JPG",
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/Bolio-Bero-150x150.png",
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/john-deere-logo-8759FA1BB0-seeklogo.com.png"
+									]
+								},
+								{
+									"key": "defaultImage",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/CV/Portfolio/images/weather-icon-png-2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/product/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjU1NDgyMCwiZXhwIjoxNjk2NjQxMjIwfQ.zRhZ6P4iHtr-o09Yo0oFIQ2tkhHpKyZexxbh9JdhBKg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "I phone 15",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This Product is so Good Specially when you are out it helps you to avoid the water and be more confdent",
+									"type": "text"
+								},
+								{
+									"key": "availableItems",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "60000",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "65040c6ea6c8be93557e56e3",
+									"type": "text"
+								},
+								{
+									"key": "subCategoryId",
+									"value": "65040caea6c8be93557e56f0",
+									"type": "text"
+								},
+								{
+									"key": "brandId",
+									"value": "65040d04a6c8be93557e56fa",
+									"type": "text"
+								},
+								{
+									"key": "Images",
+									"type": "file",
+									"src": [
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/Front-End/React.js/java's assignments/Assignment 5 (Java JQuery) 10 (the best)/pages/Logo-Spitfire.png",
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/Front-End/React.js/java's assignments/Assignment 5 (Java JQuery) 10 (the best)/pages/pexels-sebastian-ervi-1763075.jpg",
+										"/C:/Users/Lenovo/Desktop/M-E-A-R-N/Front-End/React.js/java's assignments/Assignment 5 (Java JQuery) 10 (the best)/pages/rock_music_concert_dance_party.jpg"
+									]
+								},
+								{
+									"key": "defaultImage",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/M-E-A-R-N/Front-End/React.js/java's assignments/Assignment 5 (Java JQuery) 10 (the best)/pages/Logo-Spitfire.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/product/update?id=6507fe39970ab6f71864731c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6507fe39970ab6f71864731c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NDc2Mzc2MCwiZXhwIjoxNjk0ODUwMTYwfQ.3ArpIa6kgY8JX5Ecj7-yz-H9--1JonhUnkCnolh2aY4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/product/delete?id=650419d40a1210b2ff09a0c5",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "650419d40a1210b2ff09a0c5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/product/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/product/getbyid?id=6507f974f0e1ee87a6ebb9a5",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"getbyid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6507f974f0e1ee87a6ebb9a5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/product/getbyname?keyword=product3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"getbyname"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "product3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "Create Coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NTE5NTM1NCwiZXhwIjoxNjk1MjgxNzU0fQ.vebViPB4ivxfuXVN2AULmbA6Y9sXRGyPStAFzaeDX7A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discount\": 50,\r\n    \"expireAt\": \"10/1/2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/coupon/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Coupon",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NTE5NTM1NCwiZXhwIjoxNjk1MjgxNzU0fQ.vebViPB4ivxfuXVN2AULmbA6Y9sXRGyPStAFzaeDX7A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"uhydf\",\r\n    \"discount\": 82,\r\n    \"expireAt\": \"10/10/2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/coupon/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "650813f29d51e1a34e6c1f2f",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Coupon",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjM5NWRhNjY1YTY4MjdhZjM5MjQ2NCIsImlhdCI6MTY5NTE5NTM1NCwiZXhwIjoxNjk1MjgxNzU0fQ.vebViPB4ivxfuXVN2AULmbA6Y9sXRGyPStAFzaeDX7A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/coupon/delete?id=650813f29d51e1a34e6c1f2f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "650813f29d51e1a34e6c1f2f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Coupons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/coupon/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Coupon By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/coupon/getbyid?id=650abd00caa5317aa3bb4ff2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"getbyid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "650abd00caa5317aa3bb4ff2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjM0NjY4OCwiZXhwIjoxNjk2NDMzMDg4fQ.laFWwJKpqShTI0mo5ozqVFm1VPJoPcxO-VpvaJYUBbQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6507f974f0e1ee87a6ebb9a5\",\r\n    \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/cart/add",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NTQ1OTY5MiwiZXhwIjoxNjk1NTQ2MDkyfQ.1BjxbN55SXJF5GE7CqVW7bPz7Gz5HJGjwYqs_vUfnpw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/cart/getcart",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"getcart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NTQ1OTY5MiwiZXhwIjoxNjk1NTQ2MDkyfQ.1BjxbN55SXJF5GE7CqVW7bPz7Gz5HJGjwYqs_vUfnpw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6507f974f0e1ee87a6ebb9a5\",\r\n    \"quantity\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/cart/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product From Cart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NTQ1OTY5MiwiZXhwIjoxNjk1NTQ2MDkyfQ.1BjxbN55SXJF5GE7CqVW7bPz7Gz5HJGjwYqs_vUfnpw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/cart/remove?id=6507fa30f0e1ee87a6ebb9af",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"remove"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6507fa30f0e1ee87a6ebb9af"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Cart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NTQ1OTY5MiwiZXhwIjoxNjk1NTQ2MDkyfQ.1BjxbN55SXJF5GE7CqVW7bPz7Gz5HJGjwYqs_vUfnpw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/cart/clear?",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"clear"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjM0NjY4OCwiZXhwIjoxNjk2NDMzMDg4fQ.laFWwJKpqShTI0mo5ozqVFm1VPJoPcxO-VpvaJYUBbQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"19 Botros St\",\r\n    \"phone\": \"01159364517\",\r\n    \"payment\": \"Visa\",\r\n    \"coupon\":\"6zgms\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/order/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NTczMjI3MSwiZXhwIjoxNjk1ODE4NjcxfQ.stkreuLLe2RKLbr5pN-s58CZvX_4B2vlugRCZAzohJc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/order/cancel?id=6512f1f4af2bafb4ff686324",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6512f1f4af2bafb4ff686324"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjM0NjY4OCwiZXhwIjoxNjk2NDMzMDg4fQ.laFWwJKpqShTI0mo5ozqVFm1VPJoPcxO-VpvaJYUBbQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/order/reorder?id=6512dd5bf86e4c26d8485a5d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"reorder"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6512dd5bf86e4c26d8485a5d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjM0NjY4OCwiZXhwIjoxNjk2NDMzMDg4fQ.laFWwJKpqShTI0mo5ozqVFm1VPJoPcxO-VpvaJYUBbQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/order/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjM0NjY4OCwiZXhwIjoxNjk2NDMzMDg4fQ.laFWwJKpqShTI0mo5ozqVFm1VPJoPcxO-VpvaJYUBbQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6507f974f0e1ee87a6ebb9a5\",\r\n    \"content\": \"This Product is so Good Specially when you are out it helps you to avoid the water and be more confdent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/reviews/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"reviews",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjU1NDgyMCwiZXhwIjoxNjk2NjQxMjIwfQ.zRhZ6P4iHtr-o09Yo0oFIQ2tkhHpKyZexxbh9JdhBKg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewId\":\"651c59224d769e029d12eaa8\",\r\n    \"content\":\"This Product is so Bad Specially when you are out it helps you to avoid the water and be more confdent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/reviews/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"reviews",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MGQ1NzZiMjJiZjk0MTgwODJiY2NjNSIsImlhdCI6MTY5NjM0NjY4OCwiZXhwIjoxNjk2NDMzMDg4fQ.laFWwJKpqShTI0mo5ozqVFm1VPJoPcxO-VpvaJYUBbQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/reviews/delete?id=651c53a8ad82f4c58e5ffbe3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"reviews",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "651c53a8ad82f4c58e5ffbe3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/reviews/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"reviews",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
