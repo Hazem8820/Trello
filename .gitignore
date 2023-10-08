@@ -1,6 +1,6 @@
 node_modules
 Config
-SSH KEY
+SSH_KEY
 yarn-error.log
 yarn.lock
-SSH KEY.pub
+SSH_KEY.pub
