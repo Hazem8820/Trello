@@ -6,11 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "engines": {
-    "node": "18.17.1"
+    "node": "18.15.0"
   },
   "author": "hazem_marzouk",
   "license": "ISC",
