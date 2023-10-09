@@ -122,10 +122,9 @@ export const orderWebHook = asyncHandler(async (request, response) => {
         return;
     }
     // Handle the event
-    const order_id = event.data.object.metadata.order_id
     if (event.type === 'checkout.session.completed') {
         const order_id = event.data.object.metadata.order_id
-        await orderModel.findByIdAndUpdate(order_id, { paid: true })
+        await orderModel.findOneAndUpdate({ _id: order_id }, { paid: true })
         return;
     }
     // Return a 200 response to acknowledge receipt of the event

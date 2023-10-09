@@ -31,7 +31,6 @@ const orderSchema = new Schema({
     },
     paid: {
         type: Boolean,
-        enum: [true, false],
         default: false
     },
     payment: {
