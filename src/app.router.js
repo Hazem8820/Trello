@@ -34,7 +34,7 @@ const appRouter = (express, app) => {
         if (req.originalUrl === '/order/webhook') {
             return next()
         }
-        express.json()(req, res.next)
+        express.json()(req, res, next)
     })
     connectDB()
     app.use('/auth', authRouter)
