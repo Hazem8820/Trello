@@ -30,8 +30,13 @@ const appRouter = (express, app) => {
     //     return next()
     // })
     app.use(cors())
+    app.use((req, res, next) => {
+        if (req.originalUrl === '/order/webhook') {
+            return next()
+        }
+        express.json()(req, res.next)
+    })
     connectDB()
-    app.use(express.json())
     app.use('/auth', authRouter)
     app.use('/user', userRouter)
     app.use('/category', categoryRouter)

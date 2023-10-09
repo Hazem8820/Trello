@@ -29,6 +29,11 @@ const orderSchema = new Schema({
         enum: ['Placed', 'Shipped', 'Delivered', 'Canceled', 'Refunded'],
         default: 'Placed'
     },
+    paid: {
+        type: Boolean,
+        enum: [true, false],
+        default: false
+    },
     payment: {
         type: String,
         enum: ['Cash', 'Visa'],
