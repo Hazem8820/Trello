@@ -6,7 +6,7 @@ import cloudinary from './../../../utils/cloudinary.js';
 
 //////////////////////////////////////////////////////////////////// create subCategory /////////////////////////////////////////////////////////////////////////////////////
 export const createSubCategory = asyncHandler(async (req, res, next) => {
-    const category = await categoryModel.findById(req.params.categoryId)
+    const category = await categoryModel.findById(req.query.categoryId)
     if (!category) return next(new Error('In_Valid Category Id'), { cause: 400 }) // check cate id
     const subCateName = await subCategoryModel.findOne({ name: req.body.name })
     if (subCateName) return next(new Error('subCategory Name is Duplicated'), { cause: 409 }) // check sub name
