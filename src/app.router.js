@@ -29,7 +29,8 @@ const appRouter = (express, app) => {
     //     res.setHeader("Access_Control_Allow_Private_Network", true) // local or live
     //     return next()
     // })
-    app.use(cors())
+    app.use(cors()) // allow any origin
+    // control json data for webhook
     app.use((req, res, next) => {
         if (req.originalUrl === '/order/webhook') {
             return next()
