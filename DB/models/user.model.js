@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from "mongoose"
+import mongoose, { Schema, Types, model } from "mongoose"
 //schema
 const userSchema = new Schema({
     firstName: {
@@ -74,6 +74,10 @@ const userSchema = new Schema({
     },
     coverImages: [{ url: String, id: String }],
     forgotCode: String,
+    tasks: [{
+        type: Types.ObjectId,
+        ref: 'Task'
+    }]
 }, { timestamps: true })
 // model
 const userModel = mongoose.models.User || model("User", userSchema)

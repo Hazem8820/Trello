@@ -17,16 +17,10 @@ export const globalValidation = {
     gender: Joi.string().required(),
     code: Joi.string().length(5).required(),
     _id: Joi.string().custom(idValidation).required(),
-    description: Joi.string().min(30).required(),
-    availableItems: Joi.number().min(1).required(),
-    soldItems: Joi.number().required(),
-    price: Joi.number().min(2).required(),
-    discount: Joi.number(),
-    expireAt: Joi.date().greater(Date.now()).required(),
-    quantity: Joi.number().integer().min(1).required(),
-    address: Joi.string().min(10).max(100).required(),
-    coupon: Joi.string().length(5).required(),
-    payment: Joi.string().valid('Cash', 'Visa').required()
+    title: Joi.string().min(5).max(80).required(),
+    description: Joi.string().required(),
+    status: Joi.string().required(),
+    deadline: Joi.string().required()
 }
 
 export const validation = (Schema) => {
