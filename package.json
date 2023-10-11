@@ -1,7 +1,7 @@
 {
-  "name": "e-commerce",
+  "name": "trello",
   "version": "1.0.0",
-  "description": "e-commerce_app",
+  "description": "trello_app",
   "main": "index.js",
   "type": "module",
   "scripts": {
